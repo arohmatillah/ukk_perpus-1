@@ -1,8 +1,8 @@
 <?php
-include "koneksi.php";
-if (!isset($_SESSION['user'])){
-    header('location:login.php');
-}
+    include "koneksi.php";
+    if (!isset($_SESSION['user'])){
+        header('location:login.php');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,7 +55,7 @@ if (!isset($_SESSION['user'])){
                         </a>
                         <div class="sb-sidenav-menu-heading">Navigasi</div>
                         <?php
-                            if($_SESSION['user']['level'] !='Peminjam'){
+                            if($_SESSION['user']['level'] !='peminjam'){
 
                         ?>
 
@@ -84,7 +84,7 @@ if (!isset($_SESSION['user'])){
                             Ulasan
                         </a>
                         <?php
-                        if($_SESSION['user']['level'] !='Peminjam'){
+                        if($_SESSION['user']['level'] !='peminjam'){
                             ?>
                             <a class="nav-link" href="?page=laporan">
                             <div class="sb-nav-link-icon"><i class="fas fa-book"></i></div>
@@ -116,11 +116,11 @@ if (!isset($_SESSION['user'])){
                             }
                         ?>
                     </div>
-                </main>    
+                </main>
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; PERPUSTAKAAN DIGITAL BY NISA SANIA WEBSITE 2024</div>
+                            <div class="text-muted">Copyright &copy; PERPUSTAKAAN DIGITAL By Aulia Rohmatillah</div>
                             <div>
                                 <a href="#">Privacy Policy</a>
                                 &middot;

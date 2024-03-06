@@ -1,7 +1,6 @@
 <?php 
     include "koneksi.php";
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -28,16 +27,22 @@
                                             if(isset($_POST['login'])) {
                                             $username = $_POST['username'];     
                                             $password = md5($_POST['password']);   
+
                                             $data = mysqli_query($koneksi, "SELECT*FROM user where username='$username' and password ='$password'");     
                                             $cek = mysqli_num_rows($data);
                                             if($cek > 0 ) {
                                                     $_SESSION['user']= mysqli_fetch_array($data);
                                                 echo '<script>alert("Selamat Datang, Login Berhasil"); location.href="index.php";</script>';
-                                            }else {
-                                                echo '<script>alert("Maaf, Username / Password Anda Salah")</script>';
+                                                }else {
+                                                
+                                                    echo '<script>alert("Maaf, Username / Password Anda Salah")</script>';
+                                                }
                                             }
-                                            }
+
                                         ?>
+
+
+
                                         <form method= "post">
                                             <div class="form-group">
                                                 <input class="form-control" id="inputEmail" type="text" name="username" placeholder="Masukan Username Anda" />
@@ -64,7 +69,7 @@
                     </div>
                 </main>
             </div>
-          
+
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>

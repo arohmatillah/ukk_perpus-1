@@ -1,4 +1,4 @@
-<h1 class="mt-4">Tambah Buku</h1>
+<h1 class="mt-4">Buku</h1>
     <div class="card-body">
         <div class="row">
             <div class="col-md-12">
@@ -6,12 +6,12 @@
                     <?php
                     if (isset($_POST['submit'])) {
                         $id_kategori = $_POST['id_kategori'];
-                        $judul_buku = $_POST['judul_buku'];
+                        $judul = $_POST['judul'];
                         $penulis = $_POST['penulis'];
                         $penerbit = $_POST['penerbit'];
                         $tahun_terbit = $_POST['tahun_terbit'];
                         $deskripsi = $_POST['deskripsi'];
-                        $query = mysqli_query($koneksi, "INSERT INTO buku(id_kategori, judul_buku, penulis, penerbit, tahun_terbit, deskripsi) values ('$id_kategori','$judul_buku','$penulis','$penerbit','$tahun_terbit','$deskripsi')");
+                        $query = mysqli_query($koneksi, "INSERT INTO buku(id_kategori, judul, penulis, penerbit, tahun_terbit, deskripsi) values ('$id_kategori','$judul','$penulis','$penerbit','$tahun_terbit','$deskripsi')");
 
                         if ($query){
                             echo '<script>alert("Tambah Data Berhasil."); location.href="?page=buku"; </script>';
@@ -39,7 +39,7 @@
 
                     <div class="row mb-3">
                         <div class="col-md-2">Judul</div>
-                        <div class="col-md-8"><input type="text" class="form-control"name="judul_buku"></div>
+                        <div class="col-md-8"><input type="text" class="form-control"name="judul"></div>
                     </div>
 
                     <div class="row mb-3">

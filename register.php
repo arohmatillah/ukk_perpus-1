@@ -26,61 +26,66 @@
                                     <div class="card-body">
                                         <?php
                                             if(isset($_POST['register'])) {
-                                            $nama = $_POST['nama'];
-                                            $username = $_POST['username']; 
-                                            $password = md5($_POST['password']);  
-                                            $email = $_POST['email'];   
-                                            $alamat = $_POST['alamat']; 
-                                            $no_telepon = $_POST['notelepon']; 
+                                            $nama = $_POST['nama']; 
+                                            $username = $_POST['username'];     
+                                            $password = md5($_POST['password']);
+                                            $email = $_POST['email'];
+                                            $alamat = $_POST['alamat'];
+                                            $no_tlp = $_POST['no_tlp'];
                                             $level = $_POST['level'];
-
-                                            $insert = mysqli_query($koneksi, "INSERT INTO user(nama,username,password,email,alamat,notelepon,level) VALUES('$nama ','$username','$password','$email','$alamat','$notelepon','$level')");
+                                            $insert = mysqli_query($koneksi, "INSERT INTO user(nama,username,password,email,alamat,no_tlp,level)
+                                            VALUES('$nama ','$username ','$password ','$email ','$alamat ','$no_tlp ','$level')");  
                                             if ($insert){
-                                                echo '<script>alert("Selamat, register berhasil. Silahkan login!!"); location.href="login.php"</script>';
+                                                echo '<script>alert("Selamat, register berhasil, Silahkan login!!"); location.href="login.php"</script>';
                                             }else{
                                                 echo '<script>alert("Register gagal, silahkan ulangi kembali!!")</script>';
+                                                }
                                             }
-                                        }
                                         ?>
                                         <form method= "post">
                                             <div class="form-group">
                                             <label class="small mb-1">Nama Lengkap</label>
-                                                <input class="form-control"  type="text" required name="nama" placeholder="Masukan Nama Lengkap" />
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="small mb-1">Email </label>
-                                                <input class="form-control"  type="text" required name="email" placeholder="Masukan Email" />
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="small mb-1">No. Telepon </label>
-                                                <input class="form-control"  type="text" required name="no_telepon" placeholder="Masukan No.Telepon" />
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="small mb-1">Alamat</label>
-                                                <textarea name="alamat" rows="5" required class="form-control py-4"></textarea>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="small mb-1">Username </label>
-                                                <input class="form-control"  type="text" required name="username" placeholder="Masukan Username Anda" />
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="small mb-1"for="inputpassword">Password </label>
-                                                <input class="form-control" id="inputPassword" required name="password" placeholder="Masukan Password Anda" />
-                                            </div>
-                                            <br>    
-
-                                            <div class="form-group">
-                                            <label class="small mb-1">Level</label>
-                                            <select name="level" class="form-select mb-1">
-                                                <option value="Admin">Admin</option>
-                                                <option value="Petugas">Petugas</option>
-                                                <option value="Peminjam">Peminjam</option>
-                                            </select>
+                                                <input class="form-control"  type="text" name="nama" placeholder="Masukan Nama Lengkap" />
                                             </div>
                                             <br>
+                                            <div class="form-group">
+                                            <label class="small mb-1">Email</label>
+                                                <input class="form-control"  type="text" name="email" placeholder="Masukan Email" />
+                                            </div>
+                                            <br>
+                                            <div class="form-group">
+                                            <label class="small mb-1">No.Telepon</label>
+                                                <input class="form-control"  type="text" name="no_tlp" placeholder="Masukan No.Telepon" />
+                                            </div>
+                                            <br>
+                                            <div class="form-group">
+                                            <label class="small mb-1">Alamat</label>
+                                                <textarea name="alamat" rows="5" class="form-control py-4"></textarea>
+                                            </div>
+                                            <br>
+                                            <div class="form-group">
+                                            <label class="small mb-1">Username</label>
+                                                <input class="form-control"  type="text" name="username" placeholder="Masukan Username" />
+                                            </div>
+                                            <br>
+                                            <div class="form-group">
+                                            <label class="small mb-1"for="inputpassword">Password</label>
+                                                <input class="form-control" id="inputpassword" type="text" name="password" placeholder="Masukan Password" />
+                                            </div>
+                                            <br>
+                                            <div class="form-group">
+                                            <label class="small mb-1">Level</label>
+                                                <select name="level" class="form-select mb-1">
+                                                    <option value="Admin">Admin</option>
+                                                    <option value="Petugas">Petugas</option>
+                                                    <option value="Peminjam">Peminjam</option>
+                                                </select>
+                                            </div>
+                                            <br>
+                                            
                                             <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                <button class="btn btn-primary" type ="submit" name="register" value="register">Register </button>
-                                                <a class="btn btn-danger" href="login.php ">Login</a>
+                                                <button class="btn btn-primary" type ="submit" name="register" value="register ">register</button>
+                                                <a class="btn btn-danger" href="Login.php ">Login</a>
                                             </div>
                                         </form>
                                     </div>
@@ -95,7 +100,7 @@
                     </div>
                 </main>
             </div>
-          
+                    
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>

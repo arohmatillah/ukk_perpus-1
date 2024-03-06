@@ -23,7 +23,7 @@
                     <tr>
                         <td><?php echo $i++; ?></td>
                         <td><?php echo $data['kategori']; ?> </td>
-                        <td><?php echo $data['judul_buku']; ?> </td>
+                        <td><?php echo $data['judul']; ?> </td>
                         <td><?php echo $data['penulis']; ?> </td>
                         <td><?php echo $data['penerbit']; ?> </td>
                         <td><?php echo $data['tahun_terbit']; ?> </td>

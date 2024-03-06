@@ -33,7 +33,7 @@
                         while($buku = mysqli_fetch_array($buk)) {
                             ?>
                         <option <?php if ($data['id_buku'] == $buku['id_buku']) echo 'selected';?> 
-                        value="<?php echo $buku['id_buku']; ?>"><?php echo $buku ['judul_buku']; ?></option>
+                        value="<?php echo $buku['id_buku']; ?>"><?php echo $buku ['judul']; ?></option>
                             <?php
                         }
                       ?>

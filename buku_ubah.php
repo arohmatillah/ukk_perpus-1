@@ -1,4 +1,4 @@
-<h1 class="mt-4"> Ubah Buku </h1>
+<h1 class="mt-4">Buku </h1>
 <div class="card">
             <div class="col-md-12">
                 <form method="post">
@@ -6,12 +6,12 @@
                     $id = $_GET['id'];
                     if (isset($_POST['submit'])) {
                         $id_kategori = $_POST['id_kategori'];
-                        $judul_buku = $_POST['judul_buku'];
+                        $judul = $_POST['judul'];
                         $penulis = $_POST['penulis'];
                         $penerbit = $_POST['penerbit'];
                         $tahun_terbit = $_POST['tahun_terbit'];
                         $deskripsi = $_POST['deskripsi'];
-                        $query = mysqli_query($koneksi, "UPDATE buku SET id_kategori='$id_kategori', judul_buku='$judul_buku', penulis='$penulis', penerbit='$penerbit', tahun_terbit='$tahun_terbit', deskripsi='$deskripsi' WHERE id_buku=$id");
+                        $query = mysqli_query($koneksi, "UPDATE buku SET id_kategori='$id_kategori', judul='$judul', penulis='$penulis', penerbit='$penerbit', tahun_terbit='$tahun_terbit', deskripsi='$deskripsi' WHERE id_buku=$id");
 
                         if($query){
                             echo '<script>alert("Ubah Data Berhasil."); location.href="?page=buku"; </script>';
@@ -40,7 +40,7 @@
 
                     <div class="row mb-3">
                         <div class="col-md-2">Judul</div>
-                        <div class="col-md-8"><input type="text" value="<?php echo $data['judul_buku'];?>" class="form-control"name="judul_buku"></div>
+                        <div class="col-md-8"><input type="text" value="<?php echo $data['judul'];?>" class="form-control"name="judul"></div>
                     </div>
 
                     <div class="row mb-3">

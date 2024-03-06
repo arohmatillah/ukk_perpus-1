@@ -29,7 +29,7 @@
                         $buk =mysqli_query($koneksi, "SELECT*FROM buku");
                         while($buku = mysqli_fetch_array($buk)) {
                             ?>
-                        <option value="<?php echo $buku['id_buku']; ?>"><?php echo $buku ['judul_buku']; ?></option>
+                        <option value="<?php echo $buku['id_buku']; ?>"><?php echo $buku ['judul']; ?></option>
                             <?php
                         }
                       ?>
